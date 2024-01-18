@@ -21,8 +21,14 @@ function App() {
       done: false,
     };
 
+//enviou parar api
     console.log(todo);
+
+    setTitle("")
+    setTime("")
   };
+
+
   return (
     <div class ="App">
       <div className='todo-header'>
@@ -43,7 +49,6 @@ function App() {
         </form>
       </div>
       <div className='form-todo'>
-        <h2>Insira sua proxima tarefa:</h2>
         <form onSubmit={handleSubmit}>
           <div className='form-control'>
           <label htmlFor="time">Duracao:</label>
