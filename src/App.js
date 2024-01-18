@@ -13,7 +13,15 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("Enviou!");
+
+    const todo = {
+      id: Math.random(),
+      title,
+      time,
+      done: false,
+    };
+
+    console.log(todo);
   };
   return (
     <div class ="App">
@@ -27,11 +35,25 @@ function App() {
           <label htmlFor="title">O que voce vai fazer?</label>
           <input type="text" name='title' placeholder='Titulo da tarefa' 
           onChange={(e) => setTitle(e.target.value)}
-          value={title}
+          value={title || ""}
           required
           /> 
           </div>
           <input type='submit' value="Enviar" />
+        </form>
+      </div>
+      <div className='form-todo'>
+        <h2>Insira sua proxima tarefa:</h2>
+        <form onSubmit={handleSubmit}>
+          <div className='form-control'>
+          <label htmlFor="time">Duracao:</label>
+          <input type="text" name='time' placeholder='Titulo da tarefaTempo estimado (em horas)' 
+          onChange={(e) => setTime(e.target.value)}
+          value={time || ""}
+          required
+          /> 
+          </div>
+          <input type='submit' value="Criar tarefa" />
         </form>
       </div>
       <div className='list-todo'>
